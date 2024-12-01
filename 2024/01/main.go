@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"math"
 	"os"
-	"slices"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -17,8 +17,8 @@ func check(e error) {
 }
 
 func part1(left []int, right []int) int {
-	slices.Sort(left)
-	slices.Sort(right)
+	sort.Ints(left)
+	sort.Ints(right)
 
 	res := 0
 	diff := 0
@@ -32,8 +32,8 @@ func part1(left []int, right []int) int {
 }
 
 func part2(left []int, right []int) int {
-	slices.Sort(left)
-	slices.Sort(right)
+	sort.Ints(left)
+	sort.Ints(right)
 
 	res := 0
 	counts := make(map[int]int)
@@ -56,7 +56,7 @@ func readInput(r *bufio.Scanner) ([]int, []int, error) {
 	for r.Scan() {
 		line := strings.Fields(r.Text())
 
-		l, lerr := strconv.Atoi(line[0])
+		lVal, lerr := strconv.Atoi(line[0])
 		if lerr != nil {
 			return nil, nil, lerr
 		}
@@ -65,7 +65,7 @@ func readInput(r *bufio.Scanner) ([]int, []int, error) {
 			return nil, nil, rerr
 		}
 
-		left = append(left, l)
+		left = append(left, lVal)
 		right = append(right, rVal)
 	}
 
