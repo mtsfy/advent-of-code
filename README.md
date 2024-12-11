@@ -5,7 +5,7 @@ _My solutions and progress for the Advent of Code challenges._
 ## 🔨 Progress
 
 ```
-- 2024 14*
+- 2024 20*
 - 2023 0*
 - 2022 0*
 - 2021 0*
